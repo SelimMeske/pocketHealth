@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+$primary: #f44336
+*
+    margin: 0
+    padding: 0
+
+body
+    overflow-x: hidden
+
+.flex
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+.pageBanner
+    padding: 2rem 0rem
+    background: #f44336
+    color: white
+.pusher
+    width: 90%
+    margin: 0 auto        
+
+@media only screen and (min-width: 768px)
+    .pusher     
+        width: 75%
+        margin: 0 auto
+.navigation 
+    color: white  
+    width: 100%   
+    padding: 0.5rem 0rem   
+    border-bottom: 1px solid gray
+button
+    margin-bottom: 1rem !important  
+button, mat-select, mat-slider
+    width: 180px

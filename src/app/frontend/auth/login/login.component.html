@@ -1,0 +1,12 @@
+<form (submit)="onSubmit(loginForm)" #loginForm="ngForm" class="flex">
+    <mat-form-field appearance="legacy">
+        <mat-label>Username</mat-label>
+        <input name="username" matInput ngModel placeholder="Enter your username">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input name="password" type="password" matInput ngModel placeholder="Enter your password">
+    </mat-form-field>
+    Not registered yet? <p routerLink="/register" style="color: #3f51b5;">Register NOW!</p>
+    <button mat-raised-button color="primary">Login</button>
+</form>

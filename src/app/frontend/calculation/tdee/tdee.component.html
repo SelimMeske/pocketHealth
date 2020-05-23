@@ -1,0 +1,50 @@
+<div class="pageBanner">
+    <div class="flex">
+        <h2>Total Daily Energy Expenditure</h2>
+    </div>
+</div>
+<form (submit)="calculate(calcForm)" #calcForm="ngForm" class="flex">
+    
+    <div class="flex gender">
+        <label>Pick your gender</label>
+        <mat-radio-group color="warn" required ngModel name="gender" aria-label="Select an option">
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input required ngModel name="age" autocomplete="off" matInput placeholder="Height">
+    </mat-form-field>
+
+    <div class="flex" style="flex-direction: row; justify-content: space-evenly;">
+
+        <mat-form-field style="width: 90px;">
+            <mat-label>Height</mat-label>
+            <input required ngModel name="height" autocomplete="off" matInput placeholder="Height">
+        </mat-form-field>
+
+        <mat-form-field style="width: 90px;">
+            <mat-label>Weight</mat-label>
+            <input required ngModel name="weight" autocomplete="off" matInput placeholder="Weight">
+        </mat-form-field>
+    </div>
+    <p style="margin: 0;">Activity level</p>
+    <p style="margin: 0;"><strong style="color: #f44336;">{{activityMap[activity]}}</strong></p>
+    <small>Slide to change activity level</small>
+    <mat-slider
+        [max]="80"
+        [min]="0"
+        [step]="20"
+        [(ngModel)]="activity"
+        color="warn"
+        name="activity"
+        >
+    </mat-slider>
+    <small style="width: 180px; background: rgb(240, 240, 240); border-radius: 2px; margin-bottom: 1rem;">Weight and height should be either in <strong>KG</strong> and <strong>CM</strong>, or <strong>POUNDS</strong> and <strong>FEETS</strong></small>
+    <button type="submit" mat-flat-button color="warn" style="width: 180px;">Calculate</button>
+    
+    <p *ngIf="result">Your total daily energy expanditure is {{result}}</p>
+
+</form>

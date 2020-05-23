@@ -1,0 +1,11 @@
+<form (submit)="onSubmit(registerForm)" #registerForm="ngForm" class="flex">
+    <mat-form-field appearance="legacy">
+        <mat-label>Username</mat-label>
+        <input name="username" ngModel matInput placeholder="Enter your username">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input name="password" ngModel type="password" matInput placeholder="Enter your password">
+    </mat-form-field>
+    <button mat-raised-button color="primary">Register</button>
+</form>
