@@ -3,11 +3,11 @@
         <h2>Basal Metabolic Rate</h2>
     </div>
 </div>
-<form (submit)="calculate(calcForm)" #calcForm="ngForm" class="flex">
+<form *ngIf="!result" (submit)="calculate(calcForm)" #calcForm="ngForm" class="flex">
     
     <div class="flex gender">
         <label>Pick your gender</label>
-        <mat-radio-group required ngModel name="gender" aria-label="Select an option">
+        <mat-radio-group color="warn" required ngModel name="gender" aria-label="Select an option">
             <mat-radio-button value="male">Male</mat-radio-button>
             <mat-radio-button value="female">Female</mat-radio-button>
         </mat-radio-group>
@@ -32,7 +32,8 @@
     </div>
     <small style="width: 180px; background: rgb(240, 240, 240); border-radius: 2px; margin-bottom: 1rem;">Weight and height should be either in <strong>KG</strong> and <strong>CM</strong>, or <strong>POUNDS</strong> and <strong>FEETS</strong></small>
     <button type="submit" mat-flat-button color="warn" style="width: 180px;">Calculate</button>
-    
-    <p *ngIf="result">Your basal metabolic rate is {{result}}</p>
-
 </form>
+<div *ngIf="result" class="result">
+    Your basal metabolic rate is
+    <h3>{{result}}</h3>
+</div>

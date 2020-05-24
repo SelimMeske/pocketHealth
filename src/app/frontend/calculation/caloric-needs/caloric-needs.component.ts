@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import * as calculator from 'fitness-health-calculations';
+import { MatSliderChange } from '@angular/material/slider';
 
 @Component({
   selector: 'app-caloric-needs',
@@ -36,5 +37,9 @@ export class CaloricNeedsComponent implements OnInit {
     }
 
     this.result = calculator.tdee(gender, age, height, weight, activity_level);
+  }
+  
+  slideEvent(event: MatSliderChange){
+    this.activity = event.value;
   }
 }

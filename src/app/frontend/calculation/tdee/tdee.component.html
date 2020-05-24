@@ -37,9 +37,9 @@
         [max]="80"
         [min]="0"
         [step]="20"
-        [(ngModel)]="activity"
         color="warn"
         name="activity"
+        (input)="slideEvent($event)"
         >
     </mat-slider>
     <small style="width: 180px; background: rgb(240, 240, 240); border-radius: 2px; margin-bottom: 1rem;">Weight and height should be either in <strong>KG</strong> and <strong>CM</strong>, or <strong>POUNDS</strong> and <strong>FEETS</strong></small>
