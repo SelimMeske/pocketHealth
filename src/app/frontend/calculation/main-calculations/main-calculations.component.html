@@ -33,7 +33,7 @@
     <small style="width: 180px; background: rgb(240, 240, 240); border-radius: 2px; margin-bottom: 1rem;">Weight and
         height should be either in <strong>KG</strong> and <strong>CM</strong>, or <strong>POUNDS</strong> and
         <strong>FEETS</strong></small>
-    
+
     <!-- Show activity level if in TDEE or caloricNeeds mode -->
     <div *ngIf="currentMode === 'tdee' || currentMode === 'caloricNeeds' " class="flex">
         <p style="margin: 0;">Activity level</p>
@@ -73,7 +73,7 @@
 
 </form>
 
-<div *ngIf="result"  class="pusher">
+<div *ngIf="result" class="pusher">
     <div class="result">
 
         <h1>Result</h1>
@@ -82,6 +82,5 @@
         <h1>Why is knowing your caloric needs important?</h1>
         <p>Basal metabolic rate is the number of calories your body needs to accomplish its most basic (basal)
             life-sustaining functions.</p>
-
     </div>
 </div>

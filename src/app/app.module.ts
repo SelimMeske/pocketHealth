@@ -22,6 +22,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import { MainCalculationsComponent } from './frontend/calculation/main-calculations/main-calculations.component';
+import { UserInfoComponent } from './frontend/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MainCalculationsComponent } from './frontend/calculation/main-calculati
     RegisterComponent,
     HomeComponent,
     NavigationComponent,
-    MainCalculationsComponent
+    MainCalculationsComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
