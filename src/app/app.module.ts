@@ -23,6 +23,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import { MainCalculationsComponent } from './frontend/calculation/main-calculations/main-calculations.component';
 import { UserInfoComponent } from './frontend/user-info/user-info.component';
+import { SettingsComponent } from './frontend/settings/settings.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { UserInfoComponent } from './frontend/user-info/user-info.component';
     HomeComponent,
     NavigationComponent,
     MainCalculationsComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { UserInfoComponent } from './frontend/user-info/user-info.component';
     MatIconModule,
     MatSliderModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
