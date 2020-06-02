@@ -16,10 +16,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.authService.autoAuth();
-    this.authService.authStatus();
-    this.authSub = this.authService.authStatusSub().subscribe(response => {
-      this.isAuthenticated = response;
-    });
+    this.isAuthenticated = this.authService.authStatus();
+    console.log('home component ->' + this.isAuthenticated)
   }
   
   ngOnDestroy(){

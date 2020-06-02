@@ -1,5 +1,5 @@
-<div class="pageBanner">
-    <div class="flex">
+<div class="pageBanner" style="background-image: url(assets/settings_pic.jpg);">
+    <div class="flex" style="height: 100%;">
         <h2>Settings</h2>
     </div>
 </div>
@@ -9,7 +9,7 @@
         <img routerLink="/settings" src="{{imgUrl}}" alt="">
     </div>
     <button (click)="imageInput.click()" type="button" mat-flat-button color="warn">Change Profile Picture</button>
-    <mat-form-field>
+    <mat-form-field color="warn">
         <mat-label>Username</mat-label>
         <input required formControlName="username" autocomplete="off" matInput placeholder="username">
     </mat-form-field>
@@ -20,24 +20,24 @@
         </mat-radio-group>
     </div>
 
-    <mat-form-field>
+    <mat-form-field color="warn">
         <mat-label>Age</mat-label>
         <input required formControlName="age" autocomplete="off" matInput placeholder="Height">
     </mat-form-field>
 
     <div class="flex" style="flex-direction: row; justify-content: space-evenly;">
 
-        <mat-form-field style="width: 90px;">
+        <mat-form-field color="warn" style="width: 90px;">
             <mat-label>Height</mat-label>
             <input required formControlName="height" autocomplete="off" matInput placeholder="Height">
         </mat-form-field>
 
-        <mat-form-field style="width: 90px;">
+        <mat-form-field color="warn" style="width: 90px;">
             <mat-label>Weight</mat-label>
             <input required formControlName="weight" autocomplete="off" matInput placeholder="Weight">
         </mat-form-field>
     </div>
-    <mat-form-field style="width: 180px;">
+    <mat-form-field color="warn" style="width: 180px;">
         <mat-label>Goal Weight</mat-label>
         <input required formControlName="goalWeight" autocomplete="off" matInput placeholder="Goal Weight">
     </mat-form-field>

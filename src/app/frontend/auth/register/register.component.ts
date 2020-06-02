@@ -16,6 +16,10 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
+
+    if(form.invalid){
+      return;
+    }
     const username = form.value.username;
     const password = form.value.password;
 

@@ -1,3 +1,38 @@
 mat-card
     width: 100%
     margin-top: 0.5rem
+    background-image: src('https://www.ispo.com/sites/default/files/styles/content_width_phone/public/2018-11/iStock-930893882.jpg?itok=O23lW6Gi')
+    background-position: center
+    background-size: cover
+
+.mat-card
+    height: 8rem
+    display: flex !important
+    justify-content: center
+    align-items: center
+    color: white
+    position: relative
+.mat-card:hover
+    cursor: pointer    
+.mat-card:after
+    position: absolute
+    content: ''
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    background: black
+    opacity: 0.4
+    transition-duration: 0.5s
+
+.mat-card:hover:after
+    opacity: 0.2
+    
+.mat-card-title
+    z-index: 2 !important
+.ribon
+    color: white
+    background: #ff2626  
+    padding: 3px 12px
+    border-radius: 5px
+    z-index: 2

@@ -1,2 +1,3 @@
 <app-navigation *ngIf="!forbidenRoutes.includes(router.url)"></app-navigation>
 <router-outlet></router-outlet>
+<app-custom-footer *ngIf="!forbidenRoutes.includes(router.url)"></app-custom-footer>

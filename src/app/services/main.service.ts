@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user.model';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
+const BACKEND_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -30,13 +33,11 @@ export class MainService {
     userObject.append('goalWeight', userInfo.goalWeight);
     userObject.append('activityLevel', userInfo.activityLevel);
 
-    this.http.patch('http://localhost:3000/api/settings', userObject).subscribe(response => {
-     
-    });
+    return this.http.patch<{message: string}>(BACKEND_URL + 'settings', userObject);
   }
 
   getSettings(){
-    return this.http.get<{userInfo}>('http://localhost:3000/api/settings');
+    return this.http.get<{userInfo}>(BACKEND_URL + 'settings');
   }
 
   

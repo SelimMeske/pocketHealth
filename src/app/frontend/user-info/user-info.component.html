@@ -1,12 +1,12 @@
 <div class="pusher flex" style="flex-direction: row; width: 75%; justify-content: space-between;">
     <div class="flex info" style="justify-content: flex-start; flex-direction: row;">
         <div class="profImg">
-            <img routerLink="/settings" src="https://cdn.pocket-lint.com/r/s/1200x/assets/images/142207-phones-feature-what-is-apple-face-id-and-how-does-it-work-image1-5d72kjh6lq.jpg" alt="">
+            <img routerLink="/settings" src="{{userImage}}" alt="">
         </div>
     </div>
-    <div class="flex info">
-        <small><strong>Age:</strong> 23</small>
-        <small><strong>Current Weight:</strong> 100kg</small>
-        <small><strong>Goal Weight:</strong> 90kg</small>
+    <div class="flex info" style="align-items: flex-start;">
+        <small><strong>Age:</strong> {{userInfo?.age}}</small>
+        <small><strong>Current Weight:</strong> {{userInfo?.weight}} kg</small>
+        <small><strong>Goal Weight:</strong> {{userInfo?.goalweight}} kg</small>
     </div>
 </div>

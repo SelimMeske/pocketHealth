@@ -5,6 +5,7 @@ import { mimeType } from '../mime-type-validator';
 import { MainService } from 'src/app/services/main.service';
 import { User } from 'src/app/interfaces/user.model';
 import { AuthService } from 'src/app/services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-settings',
@@ -26,7 +27,7 @@ export class SettingsComponent implements OnInit {
 
   formGroup: FormGroup;
 
-  constructor(private mainService: MainService, private authService: AuthService) { }
+  constructor(private mainService: MainService, private authService: AuthService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
 
@@ -45,7 +46,6 @@ export class SettingsComponent implements OnInit {
 
     this.mainService.getSettings().subscribe(response => {
       this.userSettings = response.userInfo;
-      console.log(this.userSettings)
       this.formGroup.setValue({username: this.userSettings.username, profileImage: this.userSettings.profileImg, gender: this.userSettings.gender, age: this.userSettings.age, height: this.userSettings.height, weight: this.userSettings.weight, goalWeight: this.userSettings.goalweight, activityLevel: this.userSettings.activitylevel})
       this.imgUrl = this.userSettings.profileImg;
     });
@@ -77,7 +77,9 @@ export class SettingsComponent implements OnInit {
       return;
     }
     let userSettings: User = {username: this.formGroup.value.username, profileImg: this.formGroup.value.profileImage, gender: this.formGroup.value.gender, age: this.formGroup.value.age, height: this.formGroup.value.height, weight: this.formGroup.value.weight, goalWeight: this.formGroup.value.goalWeight, activityLevel: this.formGroup.value.activityLevel}
-    this.mainService.saveSettings(userSettings);
+    this.mainService.saveSettings(userSettings).subscribe(response => {
+      this.snackBar.open(response.message, '', {duration: 2000, panelClass: 'successBar'})
+    });
   }
 
 

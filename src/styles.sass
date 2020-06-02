@@ -3,27 +3,58 @@ $primary: #f44336
 *
     margin: 0
     padding: 0
-
+    box-sizing: border-box
 body
     overflow-x: hidden
+    display: flex
+    flex-direction: column
+    height: 100vh
 
+h2:hover, mat-card-title
+    cursor: pointer
 .flex, .result
     display: flex
     justify-content: center
     flex-direction: column
     align-items: center
-.pageBanner
+    
+.pageBanner, .pageBannerSettings
     padding: 2rem 0rem
     background: #f44336
     color: white
+    position: relative
+.pageBanner:after
+    position: absolute
+    content: ''
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: black
+    opacity: 0.4    
+.pageBanner
+    h2
+        z-index: 2
+        font-size: 25px            
+.pageBanner
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
 .pusher
-    width: 90%
+    width: 95%
     margin: 0 auto        
 
 @media only screen and (min-width: 768px)
     .pusher     
         width: 75%
         margin: 0 auto
+    .mat-card
+        height: 8rem !important
+    .pageBanner
+        height: 12rem    
+        h2
+            font-size: 45px
+
 .navigation 
     color: white  
     width: 100%   
@@ -37,6 +68,11 @@ button, mat-select, mat-slider
     color: #f44336
 .result
     padding-top: 2rem
+       
+.successBar
+    background: #6BF178 !important
+    color: black
+
 .profImg
     border: 2px solid #f44336
     border-radius: 100%
@@ -48,5 +84,28 @@ button, mat-select, mat-slider
     overflow: hidden
 
 .profImg > img
-    height: 70px
-       
+    height: 70px    
+
+.mat-card:nth-child(1)
+    background-image: url('assets/calc_pic_1.jpg')
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+
+.mat-card:nth-child(2)
+    background-image: url('assets/calc_pic_2.jpg')
+    background-position-y: 45%
+    background-size: cover
+    background-repeat: no-repeat 
+
+.mat-card:nth-child(3)
+    background-image: url('assets/calc_pic_3.jpg')
+    background-position-y: 55%
+    background-size: cover
+    background-repeat: no-repeat
+
+.mat-card:nth-child(4)
+    background-image: url('assets/calc_pic_4.jpg')
+    background-position-y: 55%
+    background-size: cover
+    background-repeat: no-repeat

@@ -1,11 +1,25 @@
 <form (submit)="onSubmit(registerForm)" #registerForm="ngForm" class="flex">
-    <mat-form-field appearance="legacy">
-        <mat-label>Username</mat-label>
-        <input name="username" ngModel matInput placeholder="Enter your username">
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input name="password" ngModel type="password" matInput placeholder="Enter your password">
-    </mat-form-field>
-    <button mat-raised-button color="primary">Register</button>
+    <div class="wrapper">
+        <h1 style="font-size: 25px;">Welcome to pocket<span style="color: #f44336;">Health</span></h1>
+        <mat-form-field color="warn" appearance="legacy">
+            <mat-label>Username</mat-label>
+            <input name="username" #username="ngModel" ngModel matInput placeholder="Enter your username" required>
+            <mat-error *ngIf="username.errors?.required">
+                Username is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field color="warn">
+            <mat-label>Password</mat-label>
+            <input name="password" ngModel type="password" matInput #password="ngModel"
+                placeholder="Enter your password" required minlength="6">
+            <mat-error *ngIf="password.errors?.required">
+                Password is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="password.errors?.minlength">
+                Password must be 6 character or more
+            </mat-error>
+        </mat-form-field>
+        Already registered? <p routerLink="/login" style="color: #f44336;">Login NOW!</p>
+        <button style="margin-top: 1rem;" mat-raised-button color="warn">Register</button>
+    </div>
 </form>
