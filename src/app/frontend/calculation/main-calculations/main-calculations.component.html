@@ -60,7 +60,7 @@
     <!-- Show weight goal if in caloricNeeds mode -->
     <mat-form-field *ngIf="currentMode === 'caloricNeeds'">
         <mat-label>Your weight goal?</mat-label>
-        <mat-select required ngModel name="goal">
+        <mat-select color="warn" required ngModel name="goal">
             <mat-option selected value="reduction">Weightloss</mat-option>
             <mat-option value="maintain">Maintain</mat-option>
             <mat-option value="gain">Gain</mat-option>
@@ -71,7 +71,7 @@
     <div *ngIf="currentMode === 'caloricNeeds'" class="flex">
         <mat-form-field>
             <mat-label>Approach to goal?</mat-label>
-            <mat-select ngModel name="approach">
+            <mat-select color="warn" ngModel name="approach">
                 <mat-option value="slow">Slow</mat-option>
                 <mat-option value="normal">Normal</mat-option>
                 <mat-option value="agressive">Agressive</mat-option>

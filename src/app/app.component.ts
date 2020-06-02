@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from './services/auth.service';
 import { Subscription } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -11,20 +10,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AppComponent implements OnInit, OnDestroy {
   
-  private successMsgSub = new Subscription;
-  forbidenRoutes = ['/login', '/register']
+ 
   
-  constructor(public router: Router, private authService: AuthService, private snackBar: MatSnackBar) {}
+  constructor(public router: Router) {}
   
   ngOnInit(){
-    this.authService.autoAuth();
-    this.successMsgSub = this.authService.getSuccessMessages().subscribe(message => {
-      this.snackBar.open(message, '', {duration: 2000, panelClass: 'successBar'});
-    });
+   
   }
 
   ngOnDestroy(){
-    this.successMsgSub.unsubscribe();
+    
   }
 
   title = 'pocketHealth';
