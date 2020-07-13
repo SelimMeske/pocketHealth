@@ -1,4 +1,3 @@
-<app-user-info *ngIf="isAuthenticated"></app-user-info>
 <div class="pusher">
     <div class="flex">
         <mat-card routerLink="/bmr">
@@ -10,9 +9,11 @@
         <mat-card routerLink="/caloricNeeds">
             <mat-card-title >How much should I eat?</mat-card-title>
         </mat-card>
-        <mat-card class="flex">
+        <mat-card routerLink="/idealWeight">
             <mat-card-title>What is my ideal weight?</mat-card-title>
-            <div class="ribon">Comming Soon.</div>
+        </mat-card>
+        <mat-card routerLink="/bodyType">
+            <mat-card-title>What is my body type?</mat-card-title>
         </mat-card>
     </div>
 </div>

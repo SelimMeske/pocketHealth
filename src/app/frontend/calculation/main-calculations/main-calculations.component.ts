@@ -17,12 +17,14 @@ export class MainCalculationsComponent implements OnInit {
   pageBannerTitleMap = {
     'bmr': 'Basal Metabolic Rate',
     'tdee': 'Total Daily Energy Expenditure',
-    'caloricNeeds': 'Total Daily Caloric Needs'
+    'caloricNeeds': 'Total Daily Caloric Needs',
+    'idealWeight': 'Your Ideal Body Weight'
   }
   pageBannerBackgroundImage = {
     'bmr': 'assets/calc_pic_1.jpg',
     'tdee': 'assets/calc_pic_2.jpg',
-    'caloricNeeds': 'assets/calc_pic_3.jpg'
+    'caloricNeeds': 'assets/calc_pic_3.jpg',
+    'idealWeight': 'assets/calc_pic_4.jpg'
   }
   result: string;
   activity: number = 0;
@@ -60,21 +62,34 @@ export class MainCalculationsComponent implements OnInit {
     let activity_level = this.activityMap[this.activity].toLowerCase();
     let goal = form.value.goal;
     let approach = form.value.approach;
+    let units = form.value.units;
 
     if(!approach) {
       approach = 'normal';
     }
 
-    if(!gender || !weight || !height || !age){
-      return;
+    if(this.currentMode !== 'idealWeight'){
+      if(!gender || !weight || !height || !age){
+        return;
+      }
     }
 
+    
+   
     if(this.currentMode === 'bmr'){
       this.result = calculator.bmr(gender, age, height, weight);
     }else if(this.currentMode === 'tdee') {
       this.result = calculator.tdee(gender, age, height, weight, activity_level);
     }else if(this.currentMode === 'caloricNeeds') {
       this.result = calculator.caloricNeeds(gender, age, height, weight, activity_level, goal, approach);
+    }else if(this.currentMode === 'idealWeight') {
+      let measurement = 'kg';
+
+      if(units === 'imperial'){
+        measurement = 'lbs';
+      }
+
+      this.result = calculator.idealBodyWeight(height, gender, units) + ' '+  measurement;
     }
     
   }

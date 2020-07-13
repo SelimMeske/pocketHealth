@@ -1,0 +1,29 @@
+<div *ngIf="!finalAnswer" class="pusher">
+    <h2>
+        {{questions[currentQuestion]}}
+    </h2>
+</div>
+<form *ngIf="!finalAnswer" #myform="ngForm">
+    <div class="pusher pusher-a">
+
+        <mat-radio-group class="questions" *ngIf="currentQuestion === 0" color="warn" ngModel required #gender="ngModel" name="answer" aria-label="Select an option">
+            <span><mat-radio-button value="male"></mat-radio-button>Male</span>
+            <span><mat-radio-button value="female"></mat-radio-button>Female</span>
+        </mat-radio-group>
+
+        <mat-radio-group class="questions" *ngIf="currentQuestion > 0" color="warn" ngModel required #question="ngModel" name="answer" aria-label="Select an option">
+            <span><mat-radio-button value=0></mat-radio-button>{{answers[currentQuestion][0]}}</span>
+            <span><mat-radio-button value=1></mat-radio-button>{{answers[currentQuestion][1]}}</span>
+            <span><mat-radio-button value=2></mat-radio-button>{{answers[currentQuestion][2]}}</span>
+        </mat-radio-group>
+        <b><p *ngIf="noOptionChoosed" style="color: #f44336;">Please choose one option.</p></b>
+        <div class="pusher-a-underline" [ngStyle]="{'width': progress}"></div>
+    </div>
+    
+    <div class="pusher">
+        <button type="button" (click)="nextQuestion(myform)" mat-flat-button color="warn">Next Question</button>
+    </div>
+</form>
+<div *ngIf="finalAnswer" class="">
+    <h1>Final answer.</h1>
+</div>
