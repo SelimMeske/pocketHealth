@@ -10,8 +10,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AppComponent implements OnInit, OnDestroy {
   
- 
-  
   constructor(public router: Router) {}
   
   ngOnInit(){

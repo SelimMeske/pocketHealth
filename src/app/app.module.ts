@@ -13,6 +13,7 @@ import { MainCalculationsComponent } from './frontend/calculation/main-calculati
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './angular-material.module';
 import { CustomFooterComponent } from './frontend/custom-footer/custom-footer.component';
+import { BodyTypeComponent } from './frontend/calculation/body-type/body-type.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CustomFooterComponent } from './frontend/custom-footer/custom-footer.co
     HomeComponent,
     NavigationComponent,
     MainCalculationsComponent,
-    CustomFooterComponent
+    CustomFooterComponent,
+    BodyTypeComponent
   ],
   imports: [
     BrowserModule,
