@@ -1,10 +1,22 @@
 .social
+    width: 10%
     img
         width: 30px
         
 .flex
-    height: 100%
     flex-direction: row       
-.social
-    width: 50%
-    justify-content: space-between    
+:host 
+    color: white
+    font-size: 17px    
+a
+    color: white
+    text-decoration: none    
+    
+.who-are-we
+    width: 30%    
+    margin-bottom: 35px
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px)
+    .who-are-we
+        width: 95%
+
