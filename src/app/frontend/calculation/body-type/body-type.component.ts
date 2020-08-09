@@ -9,11 +9,19 @@ import { NgForm } from '@angular/forms';
 export class BodyTypeComponent implements OnInit {
 
   finalAnswer: string;
+  resultImage: string;
+
   progress: string = '';
   progress_int: number = 0;
   currentQuestion: number = 0;
   noOptionChoosed: boolean = false;
-  bodyType: string[] = [];
+
+  gender: string;
+
+  ectomorph: number = 0;
+  mesomorph: number = 0;
+  endomorph: number = 0;
+
   questions: string[] = [
     'What is your gender ?',
     'Your shoulders width ?',
@@ -28,7 +36,7 @@ export class BodyTypeComponent implements OnInit {
 
   answers = [
     ['Male', 'Female'],
-    ['Wider than your hips','The same width as your hips','Narrower than your hips'],
+    ['Wider than your hips', 'The same width as your hips', 'Narrower than your hips'],
     ['Tight around your glutes', 'Perfect around your glutes', 'Loose around your glutes'],
     ['Big', 'Average', 'Small'],
     ['You carry a bit of extra fat', 'You stay lean, yet muscular', 'You stay skinny'],
@@ -43,31 +51,80 @@ export class BodyTypeComponent implements OnInit {
 
   }
 
-  nextQuestion(form: NgForm){
-    let answer = form.value.answer;
-    let gender = form.value.gender;
+  nextQuestion(form: NgForm) {
+    let currentAnswer = form.value.answer;
 
-    if(this.currentQuestion === 8){
-      console.log(this.bodyType)
+    console.log(currentAnswer)
+
+    if (currentAnswer === 'male' || currentAnswer === 'female') {
+      this.gender = currentAnswer;
+    } else if (+currentAnswer === 0) {
+      this.endomorph += 1;
+    } else if (+currentAnswer === 1) {
+      this.mesomorph += 1;
+    } else if (+currentAnswer === 2) {
+      this.ectomorph += 1;
+    }
+    
+    
+    let answer = form.value.answer;
+
+    if (this.currentQuestion === 8) {
+      if (this.endomorph === this.mesomorph) {
+        this.finalAnswer = 'Mesomorph';
+      } else if (this.endomorph === this.ectomorph) {
+        this.finalAnswer = 'Endomorph';
+      } else if (this.mesomorph === this.ectomorph) {
+        this.finalAnswer = 'Mesomorph';
+      } else if (this.mesomorph > this.endomorph && this.mesomorph > this.ectomorph) {
+        this.finalAnswer = 'Mesomorph';
+      } else if (this.ectomorph > this.endomorph && this.ectomorph > this.mesomorph) {
+        this.finalAnswer = 'Ectomorph';
+      } else if (this.endomorph > this.ectomorph && this.endomorph > this.mesomorph) {
+        this.finalAnswer = 'Endomorph';
+      }
+
+      if (this.gender === 'female') {
+
+        if (this.finalAnswer === 'Mesomorph') {
+          this.resultImage = 'assets/mesomorph-f.png';
+        } else if (this.finalAnswer === 'Endomorph') {
+          this.resultImage = 'assets/endomorph-f.png';
+        } else if (this.finalAnswer === 'Ectomorph') {
+          this.resultImage = 'assets/ectomorph-f.png';
+        }
+
+      } else {
+
+        if (this.finalAnswer === 'Mesomorph') {
+          this.resultImage = 'assets/mesomorph.png';
+        } else if (this.finalAnswer === 'Endomorph') {
+          this.resultImage = 'assets/endomorph.png';
+        } else if (this.finalAnswer === 'Ectomorph') {
+          this.resultImage = 'assets/ectomorph.png';
+        }
+
+      }
+
       this.progress_int += 11.11;
       this.progress = this.progress_int.toString() + '%';
-      this.finalAnswer = 'Bodytype';
       return;
     }
 
-    if(!answer){
+    if (!answer) {
       this.noOptionChoosed = true;
       return;
     }
+
     this.noOptionChoosed = false;
-    this.bodyType.push(answer);
-    
+
+
     form.reset();
-    
-    this.currentQuestion ++;
+
+    this.currentQuestion++;
     this.progress_int += 11.11;
     this.progress = this.progress_int.toString() + '%';
-    
-    
+
+
   }
 }
