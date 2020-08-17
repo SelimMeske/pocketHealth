@@ -19,6 +19,14 @@ export class SuppStackComponent implements OnInit {
 
   supplementStack = [];
 
+  dynamicStyle = [
+    "z-index: 10; transform: scale(1.2);",
+    "transform: translateX(60px) rotate(15deg); z-index: 9;",
+    "transform: translateX(-60px) rotate(-15deg); z-index: 9;",
+    "transform: translateX(110px) translateY(40px) rotate(25deg) scale(0.6); z-index: 8;",
+    "transform: translateX(-110px) translateY(40px) rotate(-25deg) scale(0.6); z-index: 8;",
+  ]
+
   supplements = {
     'whey': ['Impact Whey Protein', 'It’s fast-absorbing, so we recommend adding 1 large scoop (25g) to 150-250ml of water post-workout — but it’s ideal any time for a convenient way to get the protein you need.','https://www.myprotein.com/sports-nutrition/impact-whey-protein/10530943.html', 'assets/whey.png'],
     'creatine': ['Creatine Monohydrate Elite', 'Creatine has been scientifically proven to increase physical performance in successive bursts of short-term, high-intensity exercise so is a great product to consume when training for strength and power. To reap the benefits of this product we recommend adding 2 small scoops (5g) to 150-250ml of water or juice before, during, and/or after exercise. Beneficial effect is obtained with a daily intake of 3 g of creatine.','https://www.myprotein.com/sports-nutrition/creatine-monohydrate-elite/10872819.html', 'assets/creatine.png'],
@@ -55,13 +63,6 @@ export class SuppStackComponent implements OnInit {
   nextQuestion(form: NgForm) {
     let currentAnswer = form.value.answer;
 
-    if (this.currentQuestion === 5) {
-      this.progress_int += 16.66;
-      this.progress = this.progress_int.toString() + '%';
-      this.finalAnswer = 'final';
-      return;
-    }
-
     switch (currentAnswer) {
       case 'male':
         this.gender = currentAnswer;
@@ -95,7 +96,9 @@ export class SuppStackComponent implements OnInit {
       case 'Yes, every day':
         break;
       case 'Sometimes':
+        console.log(this.gender)
       case 'Not really':
+        console.log(this.gender)
         if(this.gender === 'male'){
           this.supplementStack.push(this.supplements['maleVitamin']);
         }else {
@@ -105,8 +108,18 @@ export class SuppStackComponent implements OnInit {
         
     }
 
+    
+
     if (!currentAnswer) {
       this.noOptionChoosed = true;
+      return;
+    }
+
+    if (this.currentQuestion === 5) {
+      this.progress_int += 16.66;
+      this.progress = this.progress_int.toString() + '%';
+      this.finalAnswer = 'final';
+      console.log(this.supplementStack)
       return;
     }
 

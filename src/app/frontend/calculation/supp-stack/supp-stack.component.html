@@ -28,6 +28,9 @@
 <div *ngIf="finalAnswer" class="f-answer-container">
     <div class="pusher">
         <h1>This is your ideal <span style="color: #446aac;"><strong>supplement stack</strong></span>!</h1>
+        <div class="supplement-collage-image flex">
+            <img *ngFor="let supp of supplementStack; index as i" src="{{ supp[3] }}" [style]="dynamicStyle[i]" alt="">
+        </div>
         <div *ngFor="let supp of supplementStack" class="supplement-container flex">
             <img src="{{ supp[3] }}" alt="">
             <h2>{{ supp[0] }}</h2>
