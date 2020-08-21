@@ -17,14 +17,14 @@ export class MainCalculationsComponent implements OnInit {
   pageBannerTitleMap = {
     'bmr': 'Basal Metabolic Rate',
     'tdee': 'Total Daily Energy Expenditure',
-    'caloricNeeds': 'Total Daily Caloric Needs',
-    'idealWeight': 'Your Ideal Body Weight'
+    'caloric-needs': 'Total Daily Caloric Needs',
+    'ideal-weight': 'Your Ideal Body Weight'
   }
   pageBannerBackgroundImage = {
     'bmr': 'assets/calc_pic_1.jpg',
     'tdee': 'assets/calc_pic_2.jpg',
-    'caloricNeeds': 'assets/calc_pic_3.jpg',
-    'idealWeight': 'assets/calc_pic_4.jpg'
+    'caloric-needs': 'assets/calc_pic_3.jpg',
+    'ideal-weight': 'assets/calc_pic_4.jpg'
   }
   result: string;
   activity: number = 0;

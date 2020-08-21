@@ -4,7 +4,8 @@ mat-card
     background-image: src('https://www.ispo.com/sites/default/files/styles/content_width_phone/public/2018-11/iStock-930893882.jpg?itok=O23lW6Gi')
     background-position: center
     background-size: cover
-
+mat-card-title
+    font-size: 19px
 .mat-card
     height: 12rem !important
     display: flex !important
@@ -12,6 +13,7 @@ mat-card
     align-items: center
     color: white
     position: relative
+    margin: 20px
 .mat-card:hover
     cursor: pointer
     .inner-title-overlay::before
@@ -52,6 +54,13 @@ mat-card
     padding: 3px 12px
     border-radius: 5px
     z-index: 2
+.flex-grid
+    flex-direction: row
+    width: 100%  
+    margin: 40px
 @media only screen and (max-width: 768px)
     mat-card-title
         font-size: 17px
+    .flex-grid
+            flex-wrap: wrap
+            margin: 0    
