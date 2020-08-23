@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSliderChange } from '@angular/material/slider';
-import { NgForm, FormControl, Validators } from '@angular/forms';
+import { NgForm} from '@angular/forms';
 import * as calculator from 'fitness-health-calculations';
 
 @Component({
@@ -21,10 +21,10 @@ export class MainCalculationsComponent implements OnInit {
     'ideal-weight': 'Your Ideal Body Weight'
   }
   pageBannerBackgroundImage = {
-    'bmr': 'assets/calc_pic_1.jpg',
-    'tdee': 'assets/calc_pic_2.jpg',
-    'caloric-needs': 'assets/calc_pic_3.jpg',
-    'ideal-weight': 'assets/calc_pic_4.jpg'
+    'bmr': 'assets/pc-images/calc-pic-pc-1.jpg',
+    'tdee': 'assets/pc-images/calc-pic-pc-2.jpg',
+    'caloric-needs': 'assets/pc-images/calc-pic-pc-3.jpg',
+    'ideal-weight': 'assets/pc-images/calc-pic-pc-4.jpg'
   }
   result: string;
   activity: number = 0;

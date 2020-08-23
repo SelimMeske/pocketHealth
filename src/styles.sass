@@ -1,15 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
 $primary: #f44336
 *
     margin: 0
     padding: 0
     box-sizing: border-box
+    font-family: 'Roboto', sans-serif !important
 body
     overflow-x: hidden
     display: flex
     flex-direction: column
     height: 100vh
-    font-family: raleway
+
 
 h2:hover, mat-card-title
     cursor: pointer
@@ -55,6 +57,9 @@ h2:hover, mat-card-title
         height: 12rem    
         h2
             font-size: 45px
+    .flex-grid
+            flex-wrap: wrap
+            margin: 0         
 @media only screen and (min-width: 1425px)
     .pusher     
         width: 1425px
@@ -125,3 +130,4 @@ button, mat-select, mat-slider
     background-position-y: 90%
     background-size: cover
     background-repeat: no-repeat
+     

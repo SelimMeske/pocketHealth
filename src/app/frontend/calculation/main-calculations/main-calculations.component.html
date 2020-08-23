@@ -1,8 +1,11 @@
-<div class="pageBanner" style="background-image: url({{pageBannerBackgroundImage[currentMode]}});">
-    <div class="flex">
-        <h2>{{pageBannerTitleMap[currentMode]}}</h2>
+<div class="flex pageBannerWrapper">
+    <div class="pageBanner" style="background-image: url({{pageBannerBackgroundImage[currentMode]}});">
+        <div class="flex">
+            <h2>{{pageBannerTitleMap[currentMode]}}</h2>
+        </div>
     </div>
 </div>
+
 <form *ngIf="!result" (submit)="calculate(calcForm)" #calcForm="ngForm" class="flex">
 
     <div class="flex gender">

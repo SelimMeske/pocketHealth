@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
      
       allCards.forEach(e => {
         (e as HTMLDivElement).style.backgroundImage = `url('assets/calc_pic_${currentElem}.jpg')`;
-        console.log(e)
         currentElem += 1;
       });
     }

@@ -1,0 +1,92 @@
+<div class="pusher">
+    <h1>Some characteristics about {{bodyType}}</h1> 
+    <p *ngIf="bodyType === 'Ectomorph'">
+        An <strong>ectomorph</strong> tends to be thin, and struggles to gain weight as either body fat or muscle. They can eat piles of food and stay looking the same, even when gaining muscular weight is their biggest goal. People who battle to gain muscle are often known as "hardgainers."
+        <br><br>Ectomorphs tends to have a lean build, long limbs, and small muscle bellies. Even if an ectomorph manages to put on weight, they may still look skinnier than they are, particularly in the calves and forearms.
+        <br><br>Being an ectomorph doesn't mean you're doomed to be weak, though. You can still get remarkably strong, and you can be every bit as fit and healthy as someone who looks larger and more muscular. But if you want to gain weight, you'd better be prepared to eat like you've never eaten before.
+    </p>
+    <p *ngIf="bodyType === 'Mesomorph'">
+        The <strong>mesomorph</strong> has a middle-of-the-road build that takes the best of both worlds. They tend to have wide shoulders, a narrow waist, relatively thin joints, and round muscle bellies.
+        <br><br>In short, you have a natural tendency to be fit and relatively muscular. Does this mean you can do nothing, eat everything, and get away with it forever? <strong>Definitely not</strong>—and you're not necessarily healthier than the other two types, either. But you may be able to "bounce back" from being out of shape more easily than the other two body types, gaining muscle and burning fat with comparative ease.
+
+    </p>
+    <p *ngIf="bodyType === 'Endomorph'">
+        The <strong>endomorph</strong> tends to gain weight and keep it on. Their build is a little wider than an ectomorph or mesomorph, with a thick ribcage, wide hips, and shorter limbs. They may have more muscle than either of the other body types, but they often struggle to gain it without significant amounts of accompanying body fat. If you ever feel like you gain 5 pounds simply walking by a donut shop, you may be an endomorph.
+        <br><br>This definitely doesn't mean that an endomorph can't be healthy. You can be every bit as strong, healthy, and capable as the other two groups, and may actually have some <strong>strength advantages</strong> due to their additional muscle mass. But if and when they decide to lean out, it'll take hard work!
+    </p>
+    <h2>Advantages and disadvantages of the {{bodyType}} body type</h2>
+    <p>Every body type has its <strong>advantages and disadvantages</strong>. One will be good in some things and bad in others. But remember, if a body type has a disadvantage, it does not mean that you cannot achieve your goals with hard work. In the next section we will see what are the advantages and disadvantages of each body type.</p>
+    <!--Mesomorph advantages and disadvantages-->
+    
+    <div *ngIf="bodyType === 'Mesomorph'">
+        <h3>Pros</h3>
+        <ul class="checklist">
+            <li>Naturally in shape</li>
+            <li>Strong</li>
+            <li>Builds up muscle mass quickly </li>
+            <li>Athletic physique</li>
+        </ul>
+        <h3>Cons</h3>
+        <ul class="disadv">
+            <li>Gains fat easily</li>
+            <li>Has to pay attention to a balanced diet</li>
+        </ul>
+    </div>
+    <!--Ectomorph advantages and disadvantages-->
+    
+    <div *ngIf="bodyType === 'Ectomorph'">
+        <h3>Pros</h3>
+        <ul class="checklist">
+            <li>Fast metabolism</li>
+            <li>Can lose fat very quickly</li>
+            <li>Low body fat percentage</li>
+            <li>Can eat a lot</li>
+        </ul>
+        <h3>Cons</h3>
+        <ul class="disadv">
+            <li>Hard gainer</li>
+            <li>Narrower shoulders</li>
+            <li>Hard to gain any weight</li>
+            <li>Smaller bone structure</li>
+        </ul>
+    </div>
+    <!--Endomorph advantages and disadvantages-->
+    <div *ngIf="bodyType === 'Endomorph'">
+        <h3>Pros</h3>
+        <ul class="checklist">
+            <li>Naturally strong</li>
+            <li>Gain muscle easily</li>
+        </ul>
+        <h3>Cons</h3>
+        <ul class="disadv">
+            <li>Gains fat easily</li>
+            <li>Shorter limbs</li>
+            <li>Harder to lose fat</li>
+            <li>Slow metabolism</li>
+        </ul>
+    </div>
+    <h2>The right nutrition for the {{bodyType}} body type</h2>
+    <p *ngIf="bodyType === 'Mesomorph'">This body type should pay more attention to its <strong>energy balance</strong> in its diet. It needs a balance of carbohydrates, animal and vegetable protein. Fat and sugar should only make up a small proportion of the diet. In order to burn fat well in the evening, the majority of carbohydrates should be consumed in the morning and at lunchtime.</p>
+    <p *ngIf="bodyType === 'Ectomorph'">Ectomorph body types can have a <strong>high carbohydrate content</strong> in their diet because they consume a lot of energy. Eating a plate of pasta with vegetables and olive oil in the evening is a good source of energy for them and prevents them from losing more weight. 
+        Besides fresh vegetables, pasta, rice, potatoes, nuts and cheese are good foods for the ectomorph body type.</p><div *ngIf="bodyType === 'Ectomorph'" class="info-tab">It is not a good idea to cover your energy needs in the form of sugary drinks and fast food, as important vitamins, good fats and vital substances are not available.</div>
+        
+    <p *ngIf="bodyType === 'Endomorph'">For this type of body, a balanced or even slightly negative <strong>calorie balance is important</strong>, i.e.: do not eat more than your personal calorie requirements allow!
+        Sugar and fat should only be supplied to your body in a limited way. If you eat carbohydrates, they should be complex ones made from whole grain products. White flour products, light pasta and peeled rice should be avoided.
+        For optimal fat burning, dinner should be low-fat and low carb, but high in protein and fibre. In this way the metabolism of the endomorph body type gets going and burns more fat.
+        </p>
+    <h2>The right training for {{bodyType}}</h2>   
+    <p *ngIf="bodyType === 'Mesomorph'">The mesomorph body type is something like a model athlete. His body is very resilient and <strong>builds up muscles quickly</strong>. Sports injuries are rather rare. 
+        If this body type trains the large muscle areas, he will quickly see success. An ideal mix consists of cardio and strength training sessions. Talented exercisers, such as Mesomorphs, are also well suited for functional training such as sling training or tabata. Variety and permanent performance improvement are the secret!
+        </p> 
+    <p *ngIf="bodyType === 'Ectomorph'">The ectomorph body type or hardgainer has by nature a low body fat percentage. When he builds up muscles, you can see this immediately - but the way to a muscular body is not easy. It is important that hardgainers do not burn unnecessary calories, for example during cardio training.<br><br> To build muscles, the ectomorph body type should choose as <strong>hard exercises as possible</strong> and do fewer repetitions. Good exercises to build muscles are push-ups, knee bends, shoulder presses, reverse flyes and crunches. The key to success is to train as quickly and intensively as possible and give the body enough time to recover. In this way you will become a slim but defined body - an important advantage also for health and body feeling!</p> 
+    <p *ngIf="bodyType === 'Endomorph'">The recipe for success for the endomorph body type is to always keep moving. To <strong>burn more fat</strong>, this type needs to build muscles. In order for these to become visible, however, additional fat must be broken down. Therefore a mix of 3 sessions of strength training and 2-3 sessions of cardio training is ideal for the endomorph body type.</p> 
+    <div *ngIf="bodyType === 'Mesomorph'" class="info-tab"><p>The mesomorph body type quickly builds up muscle mass, but has to pay attention to a balanced diet in order not to gain fat on the stomach and hips. Mesomorph has also a very athletic body.</p></div>    
+    <div *ngIf="bodyType === 'Endomorph'" class="info-tab"><p>The endomorph body type quickly builds up more fat than muscles and must pay strict attention to diet to avoid weight gain. However, his body recovers quickly and can be defined by specific training.</p></div> 
+    <mat-card routerLink="/supplement-stack" style="height: 192px;">
+        <div class="title-overlay">
+            <div class="inner-title-overlay flex" style="height: 100%;">
+                <mat-card-title>WHAT’S MY IDEAL SUPPLEMENT STACK?</mat-card-title>
+            </div>
+        </div>
+    </mat-card>   
+</div>

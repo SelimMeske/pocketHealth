@@ -15,6 +15,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { CustomFooterComponent } from './frontend/custom-footer/custom-footer.component';
 import { BodyTypeComponent } from './frontend/calculation/body-type/body-type.component';
 import { SuppStackComponent } from './frontend/calculation/supp-stack/supp-stack.component';
+import { BodyTypeTextComponent } from './frontend/calculation/body-type-text/body-type-text.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SuppStackComponent } from './frontend/calculation/supp-stack/supp-stack
     MainCalculationsComponent,
     CustomFooterComponent,
     BodyTypeComponent,
-    SuppStackComponent
+    SuppStackComponent,
+    BodyTypeTextComponent
   ],
   imports: [
     BrowserModule,
