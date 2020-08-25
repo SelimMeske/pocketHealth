@@ -1,0 +1,152 @@
+.pusher
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    overflow-wrap: break-word
+    overflow-x: hidden
+    padding: 20px 0px
+.banner
+    position: relative
+    width: 100%
+    overflow: hidden
+    border-bottom: 1px solid #3f3f3f
+    border-top: 1px solid #3f3f3f
+.banner::before
+    content: ''
+    top: 0
+    right: 0
+    width: 100%
+    background: #9999992f
+    position: absolute
+    height: 170%
+    transform: skewY(-22deg) translateY(250px)
+    z-index: -1 
+.banner::after
+    content: ''
+    top: 50%
+    left: 50%
+    width: 50%
+    background: #00abbe7a
+    position: absolute
+    height: 20%
+    transform: translate(-50%, -50%) rotateZ(-22deg) skewX(20deg)
+    z-index: -1
+.questions
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    flex-direction: column
+    flex-wrap: wrap
+    width: 100%
+.rado-custom
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    margin: 5px 10px
+.pusher-a
+    background: #f0f0f0 
+    border-radius: 15px 
+    position: relative
+    z-index: 2
+.pusher-a-underline
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 0%
+    transition-duration: 1.0s
+    transition-timing-function: ease-out
+    height: 100%
+    border-bottom-left-radius: 15px
+    border-bottom: 2px solid #446aac
+    z-index: -1
+.supplement-container
+    flex-direction: row    
+    width: 97%
+    transition-duration: 0.5s
+    cursor: pointer
+    position: relative
+    overflow: hidden
+    flex-wrap: wrap
+.supplement-container::before
+    content: ''
+    top: 0
+    right: 0
+    width: 0%
+    background: #9999992f
+    position: absolute
+    height: 150%
+    transform: skewY(-18deg) translateY(190px)
+    z-index: -1 
+    transition-duration: 0.3s
+.supplement-container::after
+    content: ''
+    top: 50%
+    left: 50%
+    width: 0%
+    background: #00abbe7a
+    position: absolute
+    height: 20%
+    transform: translate(-50%, -50%) rotateZ(-18deg) skewX(20deg)
+    z-index: -1
+    transition-duration: 0.3s
+    transition-delay: 0.3s
+.supp-img, .supp-text
+    flex: 1  
+.supp-img > img
+        width: 400px
+        height: auto
+.supplement-collage-image 
+    position: relative
+    height: 450px
+    img
+        width: 400px
+        height: auto
+        position: absolute
+        top: 0 
+.supplement-container:hover
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75)
+    -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75)
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75)   
+    z-index: 100
+.supplement-container:hover:before
+    width: 100%   
+.supplement-container:hover:after
+    width: 50%        
+.result-text
+    font-size: 45px
+    margin: 70px
+    color: rgb(32, 32, 32)    
+@media only screen and (max-width: 768px)
+    .supp-img > img
+        width: 200px
+        height: auto
+    .supplement-collage-image 
+        height: 250px
+    .supplement-collage-image > img
+        width: 200px
+        height: auto    
+    .supplement-container:hover:before
+        width: 0%   
+    .supplement-container:hover:after
+        width: 0%   
+    .banner
+        width: 320px         
+    .banner::before
+        background: #9999992f
+        position: absolute
+        height: 170%
+        transform: skewY(-42deg) translateY(110px)
+        z-index: -1 
+    .banner::after
+        background: #00abbe7a
+        position: absolute
+        width: 80%
+        transform: translate(-50%, -50%) rotateZ(-42deg) skewX(20deg)
+        z-index: -1    
+    .result-text
+        margin-left: 0px
+        margin-right: 0px
+        font-size: 24px   
+    .supplement-container:hover
+        box-shadow: none

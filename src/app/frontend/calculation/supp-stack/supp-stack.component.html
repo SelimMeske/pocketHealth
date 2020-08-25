@@ -1,0 +1,48 @@
+<div *ngIf="!finalAnswer" class="pusher">
+    <h2>
+        {{questions[currentQuestion]}}
+    </h2>
+</div>
+<form *ngIf="!finalAnswer" #myform="ngForm">
+    <div class="pusher pusher-a">
+
+        <mat-radio-group class="questions" *ngIf="currentQuestion === 0" color="primary" ngModel required #gender="ngModel" name="answer" aria-label="Select an option">
+            <span class="rado-custom"><mat-radio-button value="male"></mat-radio-button>Male</span>
+            <span class="rado-custom"><mat-radio-button value="female"></mat-radio-button>Female</span>
+        </mat-radio-group>
+
+        <mat-radio-group class="questions" *ngIf="currentQuestion > 0" color="primary" ngModel required #question="ngModel" name="answer" aria-label="Select an option">
+            <span class="rado-custom"><mat-radio-button value={{answers[currentQuestion][0]}}></mat-radio-button>{{answers[currentQuestion][0]}}</span>
+            <span class="rado-custom"><mat-radio-button value={{answers[currentQuestion][1]}}></mat-radio-button>{{answers[currentQuestion][1]}}</span>
+            <span *ngIf="answers[currentQuestion][2]" class="rado-custom"><mat-radio-button value={{answers[currentQuestion][2]}}></mat-radio-button>{{answers[currentQuestion][2]}}</span>
+            <span *ngIf="answers[currentQuestion][3]" class="rado-custom"><mat-radio-button value={{answers[currentQuestion][3]}}></mat-radio-button>{{answers[currentQuestion][3]}}</span>
+        </mat-radio-group>
+        <b><p *ngIf="noOptionChoosed" style="color: #446aac;">Please choose one option.</p></b>
+        <div class="pusher-a-underline" [ngStyle]="{'width': progress}"></div>
+    </div>
+    
+    <div class="pusher">
+        <button type="button" (click)="nextQuestion(myform)" mat-flat-button color="primary" style="background: #446aac !important;">Next Question</button>
+    </div>
+</form>
+<div *ngIf="finalAnswer" class="f-answer-container">
+    <div class="pusher">
+        <div class="banner">
+            <div class="supplement-collage-image flex">
+                <img *ngFor="let supp of supplementStack; index as i" src="{{ supp[3] }}" [style]="dynamicStyle[i]" alt="">
+            </div>
+        </div>
+        <h1 class="result-text">Your ideal <span style="color: #446aac;">supplement</span> stack</h1>
+        <div *ngFor="let supp of supplementStack" class="supplement-container flex">
+            <div class="supp-img flex">
+                <img src="{{ supp[3] }}" alt="">
+            </div>
+            <div class="supp-text flex">
+                <h2>{{ supp[0] }}</h2>
+                <p>{{ supp[1] }}</p>
+                <a target="_blank" (click)="googleABuyButton()" href="{{ supp[2] }}"><button type="button" mat-flat-button style="background: #446aac !important;" color="primary" >Buy now</button></a>
+            </div>
+        </div>
+    </div>  
+    
+</div>

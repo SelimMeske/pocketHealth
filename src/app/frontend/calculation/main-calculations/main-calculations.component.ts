@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSliderChange } from '@angular/material/slider';
-import { NgForm, FormControl, Validators } from '@angular/forms';
+import { NgForm} from '@angular/forms';
 import * as calculator from 'fitness-health-calculations';
 
 @Component({
@@ -17,14 +17,14 @@ export class MainCalculationsComponent implements OnInit {
   pageBannerTitleMap = {
     'bmr': 'Basal Metabolic Rate',
     'tdee': 'Total Daily Energy Expenditure',
-    'caloricNeeds': 'Total Daily Caloric Needs',
-    'idealWeight': 'Your Ideal Body Weight'
+    'caloric-needs': 'Total Daily Caloric Needs',
+    'ideal-weight': 'Your Ideal Body Weight'
   }
   pageBannerBackgroundImage = {
-    'bmr': 'assets/calc_pic_1.jpg',
-    'tdee': 'assets/calc_pic_2.jpg',
-    'caloricNeeds': 'assets/calc_pic_3.jpg',
-    'idealWeight': 'assets/calc_pic_4.jpg'
+    'bmr': 'assets/pc-images/calc-pic-pc-1.jpg',
+    'tdee': 'assets/pc-images/calc-pic-pc-2.png',
+    'caloric-needs': 'assets/pc-images/calc-pic-pc-3.jpg',
+    'ideal-weight': 'assets/pc-images/calc-pic-pc-4.jpg'
   }
   result: string;
   activity: number = 0;
@@ -51,9 +51,11 @@ export class MainCalculationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentMode = this.router.url.replace('/', '');
+    console.log(this.currentMode);
   }
   
   calculate(form: NgForm){
+    console.log('start')
     this.calcPressed = true;
     let gender = form.value.gender;
     let weight = +form.value.weight;
@@ -68,21 +70,21 @@ export class MainCalculationsComponent implements OnInit {
       approach = 'normal';
     }
 
-    if(this.currentMode !== 'idealWeight'){
+    if(this.currentMode !== 'ideal-weight'){
+      console.log('in if statemnt')
       if(!gender || !weight || !height || !age){
+        console.log('RETURNED')
         return;
       }
-    }
-
-    
-   
+    } 
+    console.log('OUT of')
     if(this.currentMode === 'bmr'){
       this.result = calculator.bmr(gender, age, height, weight);
     }else if(this.currentMode === 'tdee') {
       this.result = calculator.tdee(gender, age, height, weight, activity_level);
-    }else if(this.currentMode === 'caloricNeeds') {
+    }else if(this.currentMode === 'caloric-needs') {
       this.result = calculator.caloricNeeds(gender, age, height, weight, activity_level, goal, approach);
-    }else if(this.currentMode === 'idealWeight') {
+    }else if(this.currentMode === 'ideal-weight') {
       let measurement = 'kg';
 
       if(units === 'imperial'){

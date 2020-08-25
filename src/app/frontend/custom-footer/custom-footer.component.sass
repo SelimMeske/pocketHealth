@@ -1,7 +1,7 @@
 .social
-    width: 10%
     img
         width: 30px
+        margin-right: 30px
         
 .flex
     flex-direction: row       
@@ -11,12 +11,29 @@
 a
     color: white
     text-decoration: none    
-    
+.social
+    justify-content: flex-start 
 .who-are-we
-    width: 30%    
+    width: 95%    
     margin-bottom: 35px
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px)
+    .main-holder
+        flex-direction: column !important
+    .section:nth-child(2)
+        margin-top: 60px
+    .section
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column   
+    .social
+        justify-content: space-evenly !important
+        width: 80% !important
+        img
+            margin: 0px
     .who-are-we
-        width: 95%
-
+        justify-content: center !important
+        align-items: center !important        
+.section
+    flex: 1

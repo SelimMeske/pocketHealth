@@ -26,11 +26,11 @@
 </form>
 <div *ngIf="finalAnswer" class="f-answer-container">
     <div class="pusher">
-        <h1>Your bodytype is <span style="color: #446aac;"><strong>{{ finalAnswer }}</strong></span>!</h1>
+        <h1 class="answerTitle">Your bodytype is <span style="color: #446aac;"><strong>{{ finalAnswer }}</strong></span>!</h1>
 
         <div class="image-container">
             <img src="{{resultImage}}" alt="">
         </div>
-    </div>  
-    
+    <app-body-type-text [bodyType]="finalAnswer"></app-body-type-text>
+    </div> 
 </div>

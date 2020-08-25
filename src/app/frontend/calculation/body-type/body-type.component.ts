@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -54,8 +54,6 @@ export class BodyTypeComponent implements OnInit {
   nextQuestion(form: NgForm) {
     let currentAnswer = form.value.answer;
 
-    console.log(currentAnswer)
-
     if (currentAnswer === 'male' || currentAnswer === 'female') {
       this.gender = currentAnswer;
     } else if (+currentAnswer === 0) {
@@ -65,9 +63,6 @@ export class BodyTypeComponent implements OnInit {
     } else if (+currentAnswer === 2) {
       this.ectomorph += 1;
     }
-    
-    
-    let answer = form.value.answer;
 
     if (this.currentQuestion === 8) {
       if (this.endomorph === this.mesomorph) {
@@ -111,7 +106,7 @@ export class BodyTypeComponent implements OnInit {
       return;
     }
 
-    if (!answer) {
+    if (!currentAnswer) {
       this.noOptionChoosed = true;
       return;
     }
