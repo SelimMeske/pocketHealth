@@ -68,7 +68,6 @@
     position: relative
     overflow: hidden
     flex-wrap: wrap
-
 .supplement-container::before
     content: ''
     top: 0
@@ -94,8 +93,6 @@
     transition-delay: 0.3s
 .supp-img, .supp-text
     flex: 1  
-
-
 .supp-img > img
         width: 400px
         height: auto
@@ -116,6 +113,10 @@
     width: 100%   
 .supplement-container:hover:after
     width: 50%        
+.result-text
+    font-size: 45px
+    margin: 70px
+    color: rgb(32, 32, 32)    
 @media only screen and (max-width: 768px)
     .supp-img > img
         width: 200px
@@ -143,3 +144,9 @@
         width: 80%
         transform: translate(-50%, -50%) rotateZ(-42deg) skewX(20deg)
         z-index: -1    
+    .result-text
+        margin-left: 0px
+        margin-right: 0px
+        font-size: 24px   
+    .supplement-container:hover
+        box-shadow: none

@@ -146,5 +146,13 @@ export class SuppStackComponent implements OnInit {
 
 
   }
-
+  // Google A. button tracker
+  googleABuyButton = () => {
+    (<any>window).ga('send', 'event', {
+      eventCategory: 'Supplement stack',
+      eventLabel: 'Buy button',
+      eventAction: 'Supplement stack buy button',
+      eventValue: 10
+    });
+  }
 }

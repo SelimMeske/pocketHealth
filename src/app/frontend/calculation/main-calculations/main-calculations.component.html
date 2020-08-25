@@ -21,7 +21,7 @@
        
     </div>
 
-    <mat-form-field style="width: 240px;" color="primary" *ngIf="currentMode !== 'idealWeight'">
+    <mat-form-field style="width: 240px;" color="primary" *ngIf="currentMode !== 'ideal-weight'">
         <mat-label>Age</mat-label>
         <input required ngModel name="age" #age="ngModel" autocomplete="off" color="primary" matInput placeholder="Age">
         <mat-error *ngIf="age.errors?.required">
@@ -39,7 +39,7 @@
             </mat-error>
         </mat-form-field>
 
-        <mat-form-field *ngIf="currentMode !== 'idealWeight'" color="primary" style="width: 120px; ">
+        <mat-form-field *ngIf="currentMode !== 'ideal-weight'" color="primary" style="width: 120px; ">
             <mat-label>Weight</mat-label>
             <input required ngModel name="weight" #weight="ngModel" autocomplete="off" matInput placeholder="Weight">
             <mat-error *ngIf="height.errors?.required">
@@ -48,8 +48,8 @@
         </mat-form-field>
     </div>
 
-    <!-- Show measuring units if in idealWeight mode -->
-    <mat-form-field *ngIf="currentMode === 'idealWeight'" style="margin-top: 10px; width: 240px;">
+    <!-- Show measuring units if in ideal-weight mode -->
+    <mat-form-field *ngIf="currentMode === 'ideal-weight'" style="margin-top: 10px; width: 240px;">
         <mat-label>Measuring units?</mat-label>
         <mat-select color="primary" required ngModel name="units">
             <mat-option selected value="metric">Metric (cm)</mat-option>
@@ -61,8 +61,8 @@
         height should be either in <strong>KG</strong> and <strong>CM</strong>, or <strong>POUNDS</strong> and
         <strong>FEETS</strong></small>
 
-    <!-- Show activity level if in TDEE or caloricNeeds mode -->
-    <div *ngIf="currentMode === 'tdee' || currentMode === 'caloricNeeds'" class="flex" style="margin: 20px 0px">
+    <!-- Show activity level if in TDEE or caloric-needs mode -->
+    <div *ngIf="currentMode === 'tdee' || currentMode === 'caloric-needs'" class="flex" style="margin: 20px 0px">
         <p style="margin: 0;">Activity level</p>
         <p style="margin: 0;"><strong style="color: #446aac;">{{activityMap[activity]}}</strong></p>
         <i><small style="width: 240px; background: rgb(240, 240, 240); border-radius: 2px; margin: 0.5rem 0.5rem;" class="flex">{{activityMapExtended[activity]}}</small></i>
@@ -70,8 +70,8 @@
         <mat-slider style="width: 240px;" (input)="slideEvent($event)" [max]="80" [min]="0" [step]="20" color="primary" name="activity">
         </mat-slider>
     </div>
-    <!-- Show weight goal if in caloricNeeds mode -->
-    <mat-form-field style="width: 240px;" *ngIf="currentMode === 'caloricNeeds'">
+    <!-- Show weight goal if in caloric-needs mode -->
+    <mat-form-field style="width: 240px;" *ngIf="currentMode === 'caloric-needs'">
         <mat-label>Your weight goal?</mat-label>
         <mat-select color="primary" required ngModel name="goal">
             <mat-option selected value="reduction">Weightloss</mat-option>
@@ -80,8 +80,8 @@
         </mat-select>
     </mat-form-field>
 
-    <!-- Show Approach to goal if in caloricNeeds mode -->
-    <div *ngIf="currentMode === 'caloricNeeds'" class="flex">
+    <!-- Show Approach to goal if in caloric-needs mode -->
+    <div *ngIf="currentMode === 'caloric-needs'" class="flex">
         <mat-form-field style="width: 240px">
             <mat-label>Approach to goal?</mat-label>
             <mat-select color="primary" ngModel name="approach">
@@ -102,11 +102,16 @@
 
 <div *ngIf="result" class="pusher">
     <div class="result">
-        <h1>Based on your stats this is your result</h1>
+        <h1 class="result-text">Based on your stats this is your result</h1>
         Your {{pageBannerTitleMap[currentMode].toLowerCase()}}:
-        <div class="circle flex"><h2 style="color:#446aac;">{{result}}</h2></div>
-        <h1>Well done is better than well said.</h1>
-        <p>You must expect great things of yourself before you can do them.</p>
-        <h1>Start <span style="color: #446aac;">exercising</span> NOW!</h1>
+        <div class="circle flex"><h2 style="color:#446aac; margin: 0;">{{result}}</h2></div>
+        <p>Once you've established your <strong>daily calorie intake</strong>, we suggest initially tracking your weight on a weekly basis. This will help to determine if you need to adjust your <a href="/caloric-needs"><div class="click-text">calorie intake</div></a> to optimize your goals.</p>
     </div>
+    <mat-card routerLink="/supplement-stack" style="height: 192px;">
+        <div class="title-overlay">
+            <div class="inner-title-overlay flex" style="height: 100%;">
+                <mat-card-title>WHAT’S MY IDEAL SUPPLEMENT STACK?</mat-card-title>
+            </div>
+        </div>
+    </mat-card> 
 </div>

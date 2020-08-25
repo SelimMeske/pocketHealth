@@ -32,7 +32,7 @@
                 <img *ngFor="let supp of supplementStack; index as i" src="{{ supp[3] }}" [style]="dynamicStyle[i]" alt="">
             </div>
         </div>
-        <h1 style="font-size: 45px; margin: 70px; color: rgb(32, 32, 32);">Your ideal <span style="color: #446aac;">supplement</span> stack</h1>
+        <h1 class="result-text">Your ideal <span style="color: #446aac;">supplement</span> stack</h1>
         <div *ngFor="let supp of supplementStack" class="supplement-container flex">
             <div class="supp-img flex">
                 <img src="{{ supp[3] }}" alt="">
@@ -40,7 +40,7 @@
             <div class="supp-text flex">
                 <h2>{{ supp[0] }}</h2>
                 <p>{{ supp[1] }}</p>
-                <a target="_blank" href="{{ supp[2] }}"><button type="button" mat-flat-button style="background: #446aac !important;" color="primary" >Buy now</button></a>
+                <a target="_blank" (click)="googleABuyButton()" href="{{ supp[2] }}"><button type="button" mat-flat-button style="background: #446aac !important;" color="primary" >Buy now</button></a>
             </div>
         </div>
     </div>  
