@@ -12,22 +12,22 @@ const routes: Routes = [
     description: 'Every fitness calculator that you need in one place.',
     ogUrl: 'instafitcalculator.com'
   }},
-  {path: 'bmr', component: MainCalculationsComponent, data: {
+  {path: 'bmr-calculator', component: MainCalculationsComponent, data: {
     title: 'Calculate your basal metabolic rate | InstaFitCalculator.com',
     description: 'Calculate the basal metabolic rate with InstaFitCalculator.',
-    ogUrl: 'instafitcalculator.com/bmr'
+    ogUrl: 'instafitcalculator.com/bmr-calculator'
   }},
-  {path: 'tdee', component: MainCalculationsComponent, data: {
+  {path: 'tdee-calculator', component: MainCalculationsComponent, data: {
     title: 'Calories Burned Calculator | InstaFitCalculator.com',
     description: 'You wonder how much calories do you burn? Find out now with InstaFitCalculator.',
-    ogUrl: 'instafitcalculator.com/tdee'
+    ogUrl: 'instafitcalculator.com/tdee-calculator-calculator'
   }},
-  {path: 'caloric-needs', component: MainCalculationsComponent, data: {
+  {path: 'caloric-needs-calculator', component: MainCalculationsComponent, data: {
     title: 'Caloric needs calculator | InstaFitCalculator.com',
     description: 'You wonder how much calories do you need each day? Find out now with InstaFitCalculator.',
-    ogUrl: 'instafitcalculator.com/caloric-needs'
+    ogUrl: 'instafitcalculator.com/caloric-needs-calculator'
   }},
-  {path: 'ideal-weight', component: MainCalculationsComponent, data: {
+  {path: 'ideal-weight-calculator', component: MainCalculationsComponent, data: {
     title: 'Calculate your ideal weight | InstaFitCalculator.com',
     description: 'You wonder what is your ideal weight? Find out now with InstaFitCalculator.',
     ogUrl: 'instafitcalculator.com/ideal-weight'

@@ -17,8 +17,6 @@ export class SuppStackComponent implements OnInit {
 
   gender: string;
 
-  
-
   dynamicStyle: string[] = [
     "z-index: 10; transform: scale(1.2);",
     "transform: translateX(60px) rotate(15deg); z-index: 9;",
@@ -134,14 +132,11 @@ export class SuppStackComponent implements OnInit {
 
     this.noOptionChoosed = false;
 
-
     form.reset();
 
     this.currentQuestion++;
     this.progress_int += 16.66;
     this.progress = this.progress_int.toString() + '%';
-
-
   }
   // Google A. button tracker
   googleABuyButton = () => {
