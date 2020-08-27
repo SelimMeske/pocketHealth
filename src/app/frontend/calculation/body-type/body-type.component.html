@@ -16,7 +16,7 @@
             <span class="rado-custom"><mat-radio-button value=1></mat-radio-button>{{answers[currentQuestion][1]}}</span>
             <span class="rado-custom"><mat-radio-button value=2></mat-radio-button>{{answers[currentQuestion][2]}}</span>
         </mat-radio-group>
-        <b><p *ngIf="noOptionChoosed" style="color: #446aac;">Please choose one option.</p></b>
+        <strong><p *ngIf="noOptionChoosed" style="color: #446aac;">Please choose one option.</p></strong>
         <div class="pusher-a-underline" [ngStyle]="{'width': progress}"></div>
     </div>
     

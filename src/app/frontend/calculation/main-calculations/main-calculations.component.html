@@ -65,7 +65,7 @@
     <div *ngIf="currentMode === 'tdee' || currentMode === 'caloric-needs'" class="flex" style="margin: 20px 0px">
         <p style="margin: 0;">Activity level</p>
         <p style="margin: 0;"><strong style="color: #446aac;">{{activityMap[activity]}}</strong></p>
-        <i><small style="width: 240px; background: rgb(240, 240, 240); border-radius: 2px; margin: 0.5rem 0.5rem;" class="flex">{{activityMapExtended[activity]}}</small></i>
+        <em><small style="width: 240px; background: rgb(240, 240, 240); border-radius: 2px; margin: 0.5rem 0.5rem;" class="flex">{{activityMapExtended[activity]}}</small></em>
         <small>Slide to change activity level</small>
         <mat-slider style="width: 240px;" (input)="slideEvent($event)" [max]="80" [min]="0" [step]="20" color="primary" name="activity">
         </mat-slider>
