@@ -67,7 +67,7 @@ export class MainCalculationsComponent implements OnInit {
     if(!approach) {
       approach = 'normal';
     }
-    if(this.currentMode !== 'ideal-weight'){
+    if(this.currentMode !== 'ideal-weight-calculator'){
       if(!gender || !weight || !height || !age){
         return;
       }
