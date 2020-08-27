@@ -30,7 +30,7 @@ import { BodyTypeTextComponent } from './frontend/calculation/body-type-text/bod
     BodyTypeTextComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
